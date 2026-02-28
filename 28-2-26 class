@@ -1,0 +1,326 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMPd29p1XtxUiIuCMJnTc1p",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sangavichellaiya/colab/blob/main/28-2-26%20class\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "249Y4n87sADp",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "c097e14a-43c8-448d-ebb0-79dad8704521"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing bank.cpp\n"
+          ]
+        }
+      ],
+      "source": [
+        "%%writefile bank.cpp\n",
+        "#include <iostream>\n",
+        "using namespace std;\n",
+        "\n",
+        "string accountHolder = \"User\";\n",
+        "double balance = 1000;\n",
+        "\n",
+        "void deposit(double amount)\n",
+        "{\n",
+        "    balance += amount;\n",
+        "    cout << \"Amount deposited successfully\\n\";\n",
+        "}\n",
+        "\n",
+        "void withdraw(double amount)\n",
+        "{\n",
+        "    if(amount <= balance)\n",
+        "    {\n",
+        "        balance -= amount;\n",
+        "        cout << \"Amount withdrawn successfully\\n\";\n",
+        "    }\n",
+        "    else\n",
+        "    {\n",
+        "        cout << \"Insufficient balance\\n\";\n",
+        "    }\n",
+        "}\n",
+        "\n",
+        "void checkBalance()\n",
+        "{\n",
+        "    cout << \"Current balance is: \" << balance << endl;\n",
+        "}\n",
+        "\n",
+        "int main()\n",
+        "{\n",
+        "    int choice;\n",
+        "\n",
+        "    do\n",
+        "    {\n",
+        "        cout << \"\\n1.Deposit\\n2.Withdraw\\n3.Check Balance\\n4.Exit\\n\";\n",
+        "        cout << \"Enter choice: \";\n",
+        "        cin >> choice;\n",
+        "\n",
+        "        if(choice == 1)\n",
+        "        {\n",
+        "            double amt;\n",
+        "            cout << \"Enter amount: \";\n",
+        "            cin >> amt;\n",
+        "            deposit(amt);\n",
+        "        }\n",
+        "        else if(choice == 2)\n",
+        "        {\n",
+        "            double amt;\n",
+        "            cout << \"Enter amount: \";\n",
+        "            cin >> amt;\n",
+        "            withdraw(amt);\n",
+        "        }\n",
+        "        else if(choice == 3)\n",
+        "        {\n",
+        "            checkBalance();\n",
+        "        }\n",
+        "\n",
+        "    } while(choice != 4);\n",
+        "\n",
+        "    return 0;\n",
+        "}"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class bsnkaccount:\n",
+        "  def __init__(self,name,bal);\n",
+        "  self accound_holder=name\n",
+        "  self.balance=bal\n",
+        "  def deposide(self,amount):\n",
+        "    self.balance+=amount\n",
+        "    def withdraw(self,amount):\n",
+        "      if amount<=self.balance:\n",
+        "        self.balance-=amount\n",
+        "        else:\n",
+        "          print(\"insufficient balance\")\n",
+        "     def check_blance(self):\n",
+        "       print(f\"{self.account_holder}'s balance:{self.balance}\")\n",
+        "\n",
+        "       def main():\n",
+        "        acc1=bankaccount{\"john\",1000}\n",
+        "        acc2=balance{\"alice\",500}\n",
+        "        acc1.deposide(200)\n",
+        "        acc1.check_balance()\n",
+        "\n",
+        "        acc2.withdraw(100)\n",
+        "        acc2.check_balance()\n",
+        "         if _name__==\"_main_\":\n",
+        "          main()\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 110
+        },
+        "id": "U08yKt3_-C2_",
+        "outputId": "86b82529-fa7e-4c0e-dcdb-7848dd1a96d4"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "IndentationError",
+          "evalue": "unindent does not match any outer indentation level (<tokenize>, line 12)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<tokenize>\"\u001b[0;36m, line \u001b[0;32m12\u001b[0m\n\u001b[0;31m    def check_blance(self):\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mIndentationError\u001b[0m\u001b[0;31m:\u001b[0m unindent does not match any outer indentation level\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class bankaccount:\n",
+        "  def __init__(self,name,bal);\n",
+        "  self accound_holder=name\n",
+        "  self.balance=bal\n",
+        "  def deposide(self,amount):\n",
+        "    self.balance+=amount\n",
+        "    def withdraw(self,amount):\n",
+        "      if amount<=self.balance:\n",
+        "        self.balance-=amount\n",
+        "        else:\n",
+        "          print(\"insufficient balance\")\n",
+        "     def check_blance(self):\n",
+        "       print(f\"{self.account_holder}'s balance:{self.balance}\")\n",
+        "\n",
+        "       #derived class(inheritance)\n",
+        "       class savingAccount(bankAccount):\n",
+        "\n",
+        "\n",
+        "       def main():\n",
+        "        acc1=bankaccount{\"john\",1000}\n",
+        "        acc2=balance{\"alice\",500}\n",
+        "        acc1.deposide(200)\n",
+        "        acc1.check_balance()\n",
+        "\n",
+        "        acc2.withdraw(100)\n",
+        "        acc2.check_balance()\n",
+        "         if _name__==\"_main_\":\n",
+        "          main()\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "MXGSK-jrUqLb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#base class\n",
+        "class shape:\n",
+        "  def __init_(self,length=0,width=0):\n",
+        "    self.length=length\n",
+        "    self.width=width\n",
+        "    def get_area(self):\n",
+        "      return0\n",
+        "    def display(self):\n",
+        "      print(f\"shape with length={self.lemgth},width{self.width}\")\n",
+        "class rectangle(shape):\n",
+        "    def _init_(self,length,width):\n",
+        "      super().__init_(length,width)\n",
+        "    def get_area(self):\n",
+        "      return self.length*self.width\n",
+        "    def display(self):\n",
+        "      print(f\"rectangle:area={self.get_area()}\")\n",
+        "class circle(shape):\n",
+        "      def __init__(self,radius):\n",
+        "        super().__init_(radius,0)\n",
+        "        self.radius=radius\n",
+        "      def get_area(Self):\n",
+        "       return math.pi*self.radius=self.radius\n",
+        "      def display(self)\"\n",
+        "    print(f\"circle:radius={self.radius}.area={self.get_area()}\")\n",
+        "    def main():\n",
+        "      rect=rectangle(5,4)\n",
+        "      circle=circle(3)\n",
+        "       rect.display()\n",
+        "       cir=circle()\n",
+        "\n",
+        "       print(\"rectangle area:\",rect.get.get_area)\n",
+        "       print(\"circle area:\",circ.get.get_area())\n",
+        "       shapes=[rectangle(5,4),circle(3)]\n",
+        "       for shape in shapes:\n",
+        "        shap.display()\n",
+        "\n",
+        "      if __name__==\"__main__\":\n",
+        "        main()\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 110
+        },
+        "id": "Yb06d_Sce2-i",
+        "outputId": "9b33bdc3-c1db-450f-8d56-5737fb8071fb"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "unterminated string literal (detected at line 34) (1402137501.py, line 34)",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"/tmp/ipython-input-2763/1402137501.py\"\u001b[0;36m, line \u001b[0;32m34\u001b[0m\n\u001b[0;31m    def display(self)\"\u001b[0m\n\u001b[0m                     ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m unterminated string literal (detected at line 34)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        " #base class\n",
+        " class member:\n",
+        "  def __init_(self,name,membershipID):\n",
+        "    self.name=name\n",
+        "    self.membershipID=membershipID\n",
+        "  def display(self):\n",
+        "    print(\"name:\",self.name)\n",
+        "    print(\"membershipID:\",self.membershipID)\n",
+        "\n",
+        "#derived class-regularmember\n",
+        "class regularmember(member):\n",
+        "  def getborrowlimit(self):\n",
+        "    return3\n",
+        "\n",
+        "  def display(self):\n",
+        "    print(\"member type:premium member\")\n",
+        "    print(\"name:\",self.name)\n",
+        "    print(\"browinglimit:\",self.getborrowlimit()\"books\")\n",
+        "\n",
+        "#derived class-premiummember\n",
+        "  class premiummember(member):\n",
+        "    def getborrowlimit(self):\n",
+        "      return10\n",
+        "    def displY(self):\n",
+        "      print(\"member type:premium member\")\n",
+        "      print(\"name:\"self.name)\n",
+        "      print(\"borrowing limit:\",self.getborrowlimit(),\"books\")\n",
+        "      print(\"additional feature:discound on membership fees\")\n",
+        "\n",
+        "  #main function\n",
+        "  def main():\n",
+        "    regular=regularmember(\"sangavi\",\"R101\")\n",
+        "    premium=premiummember(\"deepika,\"p101\")\n",
+        "\n",
+        "    print(\"regular member details:\")\n",
+        "    regular.display()\n",
+        "    print(\"\\npremium member details:\")\n",
+        "    premium.display()\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "6hqXU6C7iHo8"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
